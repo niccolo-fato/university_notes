@@ -5,10 +5,10 @@
 
 ## Sommario ➕
 
-- [Errore-🚫](#Errore-🚫)
-- [Calcoli🧮](#Calcoli🧮)
-- [Stringhe📫](#Stringhe📫)
-- [Funzioni⏎](#Funzioni⏎)
+- [Errore](#Errore)
+- [Calcoli](#Calcoli)
+- [Stringhe](#Stringhe)
+- [Funzioni](#Funzioni)
 
 ## Errore 🚫
 
