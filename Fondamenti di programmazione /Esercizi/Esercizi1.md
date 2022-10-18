@@ -31,7 +31,7 @@ Mi darà un ZeroDivisionError che si verifica quando proviamo a dividere un nume
 Ridarà un SyntaxError dicendo qual'è il problema che in questo caso sarà “Missing parentheses in call to 'print'” e successivamente darà anche il modo in cui possiamo correggere il nostro errore che sarà “Did you mean print("ciao")?”
 ```
 
-- 4)Per esprimere un numero negativo, si antepone il segno meno (ad esempio,-2 ). Cosa succede se anteponete ilsegno +? e se fate 2++2 ?
+- 4)Per esprimere un numero negativo, si antepone il segno meno (ad esempio,-2 ). Cosa succede se anteponete ilsegno +? e se fate 2++2?
 ```html
 Se mettiamo un + prima del numero ,quindi magari scrivendo +2+2, non succederà nulla, stessa cosa se proviamo a scrivere 2++2. 
 ```
