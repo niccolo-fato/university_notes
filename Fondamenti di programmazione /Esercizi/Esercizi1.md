@@ -5,7 +5,7 @@
 
 ## Sommario ➕
 
-- [Errore🚫](#Errore🚫)
+- [Errore-🚫](#Errore-🚫)
 - [Calcoli🧮](#Calcoli🧮)
 - [Stringhe📫](#Stringhe📫)
 - [Funzioni⏎](#Funzioni⏎)

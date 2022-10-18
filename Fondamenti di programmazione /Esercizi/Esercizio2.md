@@ -4,8 +4,8 @@
 </p>
 
 ## Sommario ➕
-- [Stringhe📚](#Stringhe📚)
-- [Liste✏️](#Liste✏️)
+- [Stringhe 📚](#Stringhe_📚)
+- [Liste ✏️](#Liste_✏️)
 
 ## Stringhe 📚
 
