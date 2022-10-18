@@ -3,7 +3,11 @@
   <p align="center">I miei esercizi di Python!</p>
 </p>
 
-## Esercizi 📚
+## Sommario ➕
+- [Stringhe📚](#Stringhe📚)
+- [Liste✏️](#Liste✏️)
+
+## Stringhe 📚
 
 - 1)Scrivere una funzione che ritorna una stringa di saluto formata da `Ciao `, seguito dal nome come parametro, e poi da `Buona giornata!`
 ```python
@@ -50,4 +54,44 @@ characters = 0
 print(split_string(string))
 ```
 
-- 4)
+- 4)Scrivere una funziona che si comporta come `str.replace()`.Usare solo costrutti del linguaggio e non librerie.
+```python
+def replace_substring(string: str, find: str, replace: str) -> str:
+    count = 0
+    r = ""
+    tmp = ""
+    for x in string:
+        if x == find[count]:
+            tmp += x
+            count += 1
+        else:
+            r += tmp +(x)
+            tmp = ""
+            count = 0
+        if count == len(find):
+            r += replace
+    return r
+string = "Ciao Andrea"
+find= "Andrea"
+replace ="Luca"
+print(replace_substring(string,find,replace))
+```
+
+- 5)Scrivere una funzione che codifica un messaggio con il cifrario di Cesare, che sostituisce ad ogni carattere il carattere che si trova ad un certo offset nell'alfabeto. Quando si applica l'offset,si riparte dall'inizio se necessario (pensate a cosa fa il modulo).La funzione permette anche di decrittare un messaggio applicando l'offset in negativo. Si può assumere che il testo è minuscolo e fatto delle sole lettere dell'alfabeto inglese e spazi che non sono crittati.Suggerimento: Sono utili le funzioni `ord()` e `chr()`.
+```python
+def caesar_cypher(string: str, offset: int,) -> str:
+    r = ""
+    for x in string:
+        if x != ' ':
+            index = ord(x) - ord('a')
+            offsetted = (index + offset) % 26
+            r += chr(ord('a') + offsetted)
+        else:
+            r += " "
+    return r
+string = "ciao Cesare"
+offset = 17
+print(caesar_cypher(string, offset))
+```
+
+## Liste ✏️
