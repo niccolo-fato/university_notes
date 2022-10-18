@@ -10,7 +10,7 @@
 - [Stringhe](#Stringhe)
 - [Funzioni](#Funzioni)
 
-## Errore 🚫
+## Errore
 
 Iniziate a prendere familiarità con i messaggi di errore che Python vi da. Provate ad introdurre di proposito degli errori e a vedere quale messaggio di errore ottenete. Meglio fare errori ora e di proposito (e capirli), piuttosto che accidentalmente in seguito e non riuscire a capire dov'è l'errore. Ad esempio:
 
@@ -56,7 +56,7 @@ Assegneremo il numero 1 sia alla variabile x che alla variabile y.
 Mettendo il punto e virgola non succederà nulla mentre se mettiamo il punto darà errore.
 ```
 
-## Calcoli 🧮
+## Calcoli
 
 - 1)Scrivete una espressione che calcoli il numero di secondi che ci sono in 42 minuti e 42 secondi.
 ```python
@@ -127,7 +127,7 @@ while choice != 0:
        print("L'orario finale sarà: ",ora, " ore,",min," minuti,",sec," secondi."
 ```
 
-## Stringhe 📫
+## Stringhe
 
 - 1)Avete una stringa di 5 caratteri. Ogni carattere è una cifra decimale. Ad esempio, s="85721" . Stampate la somma delle cifre contenute nella stringa.
 ```python
@@ -155,7 +155,7 @@ s = "52.29"
 print(float(s))
 ```
 
-## Funzioni ⏎
+## Funzioni
 
 - 1)Scrivere una funzione che prende un numero in virgola mobile, ne calcola la radice cubica, e la ritorna.
 ```python

@@ -7,7 +7,7 @@
 - [Stringhe](#Stringhe)
 - [Liste](#Liste)
 
-## Stringhe 📚
+## Stringhe
 
 - 1)Scrivere una funzione che ritorna una stringa di saluto formata da `Ciao `, seguito dal nome come parametro, e poi da `Buona giornata!`
 ```python
@@ -94,4 +94,4 @@ offset = 17
 print(caesar_cypher(string, offset))
 ```
 
-## Liste ✏️
+## Liste
