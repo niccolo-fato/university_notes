@@ -3,14 +3,14 @@
   <p align="center">I miei esercizi di Python!</p>
 </p>
 
-## Sommario
+## Sommario ➕
 
 - [Errore](#Errore)
 - [Calcoli](#Calcoli)
 - [Stringhe](#Stringhe)
 - [Funzioni](#Funzioni)
 
-## Errore
+## Errore 🚫
 
 Iniziate a prendere familiarità con i messaggi di errore che Python vi da. Provate ad introdurre di proposito degli errori e a vedere quale messaggio di errore ottenete. Meglio fare errori ora e di proposito (e capirli), piuttosto che accidentalmente in seguito e non riuscire a capire dov'è l'errore. Ad esempio:
 
@@ -56,7 +56,7 @@ Assegneremo il numero 1 sia alla variabile x che alla variabile y.
 Mettendo il punto e virgola non succederà nulla mentre se mettiamo il punto darà errore.
 ```
 
-## Calcoli
+## Calcoli 🧮
 
 - 1)Scrivete una espressione che calcoli il numero di secondi che ci sono in 42 minuti e 42 secondi.
 ```python
@@ -127,7 +127,7 @@ while choice != 0:
        print("L'orario finale sarà: ",ora, " ore,",min," minuti,",sec," secondi."
 ```
 
-## Stringhe
+## Stringhe 📫
 
 - 1)Avete una stringa di 5 caratteri. Ogni carattere è una cifra decimale. Ad esempio, s="85721" . Stampate la somma delle cifre contenute nella stringa.
 ```python
@@ -145,7 +145,7 @@ somma = 0
 potenza = 0
 for x in range(len(s)):
    potenza = (int(s[x]))
-   somma = somma + (potenza*pow(2,x))
+   somma += (potenza*pow(2,x))
 print("Il numero binario in decimale è:", somma)
 ```
 
@@ -155,7 +155,7 @@ s = "52.29"
 print(float(s))
 ```
 
-## Funzioni 
+## Funzioni ⏎
 
 - 1)Scrivere una funzione che prende un numero in virgola mobile, ne calcola la radice cubica, e la ritorna.
 ```python
@@ -190,18 +190,17 @@ print(sum(num))
 - 3)Scrivere una funzione che implenta la stessa funzionalità di str.strip()
 ```python
 def strip_whitespace(string: str) -> str:
-    i = 0
-    i2 = 0
-    b = True
-    for x,y in enumerate(string): #enumerate(string): lunghezza della stringa
-        if y != ' ' and b == True:
-            i = x
-            b = False
-        elif y != ' ':
-            i2 = x
+    ind, ind2 = 0, 0
+    for i, j in enumerate(string):
+        if j != ' ':
+            ind = i
             break
-    return string[i:][:i2]
-string = "    Hello    "
+    for i, j in enumerate(reversed(string)):
+        if j != ' ':
+            ind2 = i
+            break
+    return string[ind:len(string) - ind2]
+string = "    Ciao sono Niccolò    "
 print(strip_whitespace(string))
 ```
 - 4)Scrivere una funzione che ritorna una stringa di saluto formata da Ciao , seguito dal nome letto come input e poi da Buona giornata!
