@@ -35,7 +35,7 @@ string = "    Ciao sono Niccolò    "
 print(strip_whitespace(string))
 ```
 
-- 3)Scrivere una funzione che implenta la stessa funzionalità di `str.split()` rimuovendo uno dei caratteri presi in input. Non ritornare stringhe vuote.Usare solo costrutti del linguaggio e non librerie.
+- 3)Scrivere una funzione che implementa la stessa funzionalità di `str.split()` rimuovendo uno dei caratteri presi in input. Non ritornare stringhe vuote.Usare solo costrutti del linguaggio e non librerie.
 ```python
 def split_string(string: str, characters: str = ''):
     split_list = []
