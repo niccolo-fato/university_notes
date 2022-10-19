@@ -94,4 +94,74 @@ offset = 17
 print(caesar_cypher(string, offset))
 ```
 
+- 6)Scrivere una funzione che controlla la validita' di una password.La password deve avere:
+- Almeno una lettera fra [a-z] e una lettera fra [A-Z]
+- Almeno un numero fra [0-9]
+- Almeno un carattere fra [$#@]
+- Essere lunga almeno 6 caratteri 
+- Essere lunga non piu' di 16 caratteri
+- La password non è valida se contiene caratteri diversi da quelli specificati sopra o se viola una delle regole specificate.
+La funzione restituisce true/false a seconda se la password sia valida o meno.
+```python
+import re
+def check_pwd(pwd: str) -> bool:
+    bool = True
+    control = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$])[A-Za-z\d@#$]{6,16}$"
+    r = re.search(control, pwd)
+    if r:
+        bool = True
+    else:
+        bool = False
+    return bool
+pwd = 'Nick90@#'
+result = check_pwd(pwd)
+if result == False:
+    print("La password non è valida")
+else:
+    print("La password è valida")
+```
 ## Liste
+
+- 1)Scrivere una funzione che somma i quadrati degli elementi di una lista.
+```python
+def sum_squares(List) -> int:
+    return sum(map(lambda x: x ** 2, List))
+List = [2, 3, 4, 5]
+print(sum_squares(List))
+```
+
+- 2)Scrivere una funzione che ritorna il valore massimo degli elementi di una lista.
+```python
+def max_element(List) -> int:
+    return max(List)
+List = [2, 10, 9, 5]
+print("Il numero più grande della lista è {}".format(max_element(List)))
+```
+
+- 3)Scrivere una funzione che rimuove i duplicati da una lista.Commentare sul tempo di esecuzione.
+```python
+def max_element(List) -> int:
+    return list(dict.fromkeys(List))
+List = [2, 10, 2, 9, 5, 9]
+print((max_element(List)))
+```
+
+- 4)Scrivere una funzione che si comporta come `reverse()`.Usare solo costrutti del linguaggio e non librerie.
+```python
+def reverse_list(elements: list) -> list:
+    return elements[::-1]
+list = [2, 10, 2, 9, 5, 9]
+print((reverse_list(list)))
+```
+
+- 5)Scrivere una funzione `flatten_list()` che prende una lista che contiene elementi o altre liste, e ritorna una lista contenente tutti gli elementi. Si può assumere che le liste contenute non contengono altre liste. Usare la funzione `isinstance()` per determinare se un elemento è una lista. Usare solo costrutti del linguaggio e non librerie.
+```python
+def flatten_list(elements: list) -> list:
+    flatten_list = []
+    for x in elements:
+        flatten_list.append(x)
+    return flatten_list
+list = [2, 10, 2, 9, 5, 9], [2, 1, 4, 0, 5, 7]
+print((flatten_list(list)))
+```
+
