@@ -1,5 +1,5 @@
 <p align="center">
-  <h2 align="center">Esercizio 12 Ottobre 2022</h2>
+  <h2 align="center">Esercizio 19 Ottobre 2022</h2>
   <p align="center">I miei esercizi di Python!</p>
 </p>
 
@@ -53,8 +53,8 @@ def intersect(list1: list, list2: list) -> list:
         if x in list2:
            result += [x]
     return result
-list1 = (5, 3, 4)
-list2 = (3, 6, 8, 4)
+list1 = [2, 3]
+list2 = [1, 2, 3]
 print(intersect(list1, list2))
 ```
 
@@ -78,4 +78,19 @@ def remove_avg(a: list) -> list:
 List1 = (5, 3, 10, 0)
 print(remove_avg(List1))
 ```
+
+- 5)Data una lista di interi (ciascun intero è compreso fra 0 e 99), scrivere una funzione che restituisca una lista di tuple (x, y),dove x è un intero, e y è il numero di volte che questo intero appare nella lista originale. La lista di tuple deve essere ordinata in base al primo elemento.
+Ad esempio, per l'input [5, 4, 1, 4], restituisce la lista [(1, 1), (4, 2), (5, 1)](ordinata in base al primo elemento perché 1 < 4 < 5)
+```python
+def frequency(a: list) -> list:
+    a.sort()
+    list1 = []
+    for x in a:
+        count = a.count(x)
+        list1.append((x, count))
+    return list(dict.fromkeys(list1))
+a = [5, 4, 1, 4]
+print(frequency(a))
+```
+
 
