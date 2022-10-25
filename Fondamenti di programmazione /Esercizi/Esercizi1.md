@@ -60,20 +60,17 @@ Mettendo il punto e virgola non succederà nulla mentre se mettiamo il punto dar
 
 - 1)Scrivete una espressione che calcoli il numero di secondi che ci sono in 42 minuti e 42 secondi.
 ```python
-x = (60*42/1)+42
-print(x);
+print((60*42/1)+42);
 ```
 
 - 2)Scrivete una espressione che calcoli il numero di miglia che ci sono in 10 chilometri. (1 miglio = 1.61 km).
 ```python
-x = 10/1.61
-print(x);
+print(10/1.61);
 ```
 
 - 3)Il volume di una sfera di raggio r è 4/3 * PI * r^3 . Scrivere una espressione che calcoli il volume di una sfera di raggio 5.
 ```python
-Volume = 4*3.14*pow(5,3)/3 
-print("Volume:",Volume)
+print(f"Volume:{4*3.14*pow(5,3)/3}")
 ```
 
 - 4)Il prezzo di copertina di un libro è 24.95, ma una libreria ottiene il 40% di sconto. I costi di spedizione sono 3 euro per la prima copia, e 75 centesimi per ogni copia aggiuntiva. Qual'è il costo totale di 60 copie?
@@ -149,10 +146,9 @@ for x in range(len(s)):
 print("Il numero binario in decimale è:", somma)
 ```
 
--3)Avete una stringa di 5 caratteri. Il carattere centrale è il punto decimale ('.'). Ad esempio, s="52.29". Stampare il numero decimale rappresentato dalla stringa (stamparlo come numero, non come stringa).
+- 3)Avete una stringa di 5 caratteri. Il carattere centrale è il punto decimale ('.'). Ad esempio, s="52.29". Stampare il numero decimale rappresentato dalla stringa (stamparlo come numero, non come stringa).
 ```python
-s = "52.29"
-print(float(s))
+print(float("52.29"))
 ```
 
 ## Funzioni
@@ -160,10 +156,9 @@ print(float(s))
 - 1)Scrivere una funzione che prende un numero in virgola mobile, ne calcola la radice cubica, e la ritorna.
 ```python
 def cube_root(num) -> float:
-   r = pow(num, 1 / 3)
-   return r;
+   return pow(num, 1 / 3);
 num = float(input("Inserire un numero:"))
-print("La radice cubica di",num,"è ", cube_root(num))
+print(f"La radice cubica di {num} è {cube_root(num)}")
 ```
 
 - 2)Scrivere una funzione che prende come input cinque numeri e ritorna la somma dei numeri pari meno quella dei numeri dispari.
@@ -171,16 +166,12 @@ print("La radice cubica di",num,"è ", cube_root(num))
 def sum(num):
     sum_p = 0
     sum_d = 0
-    r = 0
-    for x in range(5):
-        r =num[x] % 2
-        print(r)
-        if(r == 0):
-            sum_p += num[x]
+    for x in num:
+        if x % 2 == 0:
+            sum_p += x
         else:
-            sum_d += num[x]
-    print(sum)
-    return(sum_p-sum_d)
+            sum_d += x
+    return sum_p-sum_d
 num = []
 for x in range(5):
     num.insert(x, float(input("Inserisci un numero:")))
@@ -206,7 +197,7 @@ print(strip_whitespace(string))
 - 4)Scrivere una funzione che ritorna una stringa di saluto formata da Ciao , seguito dal nome letto come input e poi da Buona giornata!
 ```python
 def make_hello(name: str) -> str:
-    return 'Ciao {}, Buona giornata!'.format(name)
+    return f'Ciao {name}, Buona giornata!'
 
 name = (input("Inserisci il nome:"))
 print(make_hello(name))

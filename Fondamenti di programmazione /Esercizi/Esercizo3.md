@@ -14,12 +14,9 @@
 - La password non è valida se contiene caratteri diversi da quelli specificati sopra o se viola una delle regole specificate.
 La funzione restituisce true/false a seconda se la password sia valida o meno.
 ```python
-import re
 def check_pwd(pwd: str) -> bool:
-    bool = True
     control = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$])[A-Za-z\d@#$]{6,16}$"
-    r = re.search(control, pwd)
-    if r:
+    if re.search(control, pwd):
         bool = True
     else:
         bool = False

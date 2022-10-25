@@ -12,7 +12,7 @@
 - 1)Scrivere una funzione che ritorna una stringa di saluto formata da `Ciao `, seguito dal nome come parametro, e poi da `Buona giornata!`
 ```python
 def make_hello(name: str) -> str:
-    return 'Ciao {}, Buona giornata!'.format(name)
+    return f'Ciao {name}, Buona giornata!'
 
 name = (input("Inserisci il nome:"))
 print(make_hello(name))
@@ -103,12 +103,9 @@ print(caesar_cypher(string, offset))
 - La password non è valida se contiene caratteri diversi da quelli specificati sopra o se viola una delle regole specificate.
 La funzione restituisce true/false a seconda se la password sia valida o meno.
 ```python
-import re
 def check_pwd(pwd: str) -> bool:
-    bool = True
     control = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$])[A-Za-z\d@#$]{6,16}$"
-    r = re.search(control, pwd)
-    if r:
+    if re.search(control, pwd):
         bool = True
     else:
         bool = False
@@ -135,7 +132,7 @@ print(sum_squares(List))
 def max_element(List) -> int:
     return max(List)
 List = [2, 10, 9, 5]
-print("Il numero più grande della lista è {}".format(max_element(List)))
+print(f"Il numero più grande della lista è {max_element(List)}")
 ```
 
 - 3)Scrivere una funzione che rimuove i duplicati da una lista.Commentare sul tempo di esecuzione.
