@@ -178,7 +178,7 @@ for x in range(5):
 print(sum(num))
 ```
 
-- 3)Scrivere una funzione che implenta la stessa funzionalità di str.strip()
+- 3)Scrivere una funzione che implenta la stessa funzionalità di `str.strip()`
 ```python
 def strip_whitespace(string: str) -> str:
     ind, ind2 = 0, 0

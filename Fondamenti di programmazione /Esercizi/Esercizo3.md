@@ -90,4 +90,58 @@ a = [5, 4, 1, 4]
 print(frequency(a))
 ```
 
+- 6)Scrivere una funzione che restituisce True se la lista è palindroma, o False altrimenti
+```python
+def is_palindrome(a: list) -> bool:
+    if a == a[::-1]: bool = True
+    else: bool = False
+    return bool
+a = [1,2,5,5,2,1]
+bool = is_palindrome(a)
+if bool == True: print("La lista è palindroma")
+else: print("La lista non è palindroma")
+```
 
+- 7)Scrivere una funzione che prende in input una lista, e restituisce True se la lista è ordinata in ordine crescente o decrescente, e False altrimenti.Suggerimento: fare attenzione ai valori duplicati Utilizzare un solo ciclo e non utilizzare sorted/sort.
+```python
+def is_sorted(a: list) -> bool:
+    list(dict.fromkeys(a))
+    bool = None
+    for x in range(1,len(a)):
+        if (a[x] > a[x - 1]):
+            if bool == False:
+                return False
+            bool = True
+        if (a[x] < a[x - 1]):
+            if bool == True:
+                return False
+            bool = False
+    return True
+a = [1, 1, 2, 3, 3, 4]
+bool = is_sorted(a)
+if bool == True: print("E' ordinata in ordine crescente o decrescente")
+else: print("Non è ordinata in ordine crescente o decrescente")
+```
+
+- 8)Scrivere una funzione che restituisce True se una lista di interi è composta da una prima parte ordinata in modo crescente, seguita da una seconda parte ordinata in modo decrescente (o viceversa).
+Le due parti non devono avere necessariamente la stessa lunghezza. Utilizzare un solo ciclo e non utilizzare sorted/sort, ne la funzione is_sorted implementata precedentemente.
+Si assuma che la lista abbia almeno sempre 3 elementi.
+```python
+def is_sorted(a: list) -> bool:
+    list(dict.fromkeys(a))
+    bool = False
+    for x in range(1,len(a)-1):
+        if (a[x] > a[x - 1]) and (a[x] > a[x + 1]):
+            if bool:
+                return False
+            bool = True
+        if (a[x] < a[x - 1]) and (a[x] < a[x + 1]):
+            if bool:
+                return False
+            bool = True
+    return True
+a = [1, 2, 5, 6, 8, 9, 3]
+bool = is_sorted(a)
+if bool == True: print("E' ordinata in ordine crescente o decrescente")
+else: print("Non è ordinata in ordine crescente o decrescente")
+```
