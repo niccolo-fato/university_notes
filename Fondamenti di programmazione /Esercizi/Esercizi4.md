@@ -35,11 +35,50 @@ print(type(integer),integer)
 ```python
 def word_frequency(string: str):
     List = []
-    words = string.split()
+    lower = string.lower()
+    words = lower.split()
     for word in words:
         count = words.count(word)
         List.append((word, count))
     return list(dict.fromkeys(List))
 
-print( word_frequency('cane gatto pesce cane pappagallo pesce '))
+print( word_frequency('Cane gatto pesce cane pappagallo pesce '))
 ```
+- 4)Scrivere una funzione che data una stringa di numeri interi separati da spazi,ritorna la lista ordinata dei numeri interi con frequenza massima.
+```python
+def number_frequency(string: str) -> int:
+    seq = [int(number) for number in string.split()]
+    list1 = {}
+    for x in seq:
+        if x in list1:
+            list1[x] += 1
+        else:
+            list1[x] = 1
+    return sorted(x for x, count in list1.items() if count == max(list1.values()))
+print(number_frequency('1 3 6 9 5 1 2 2 3'))
+```
+
+- 5)Implementare una funzione `ricorsiva` che data una lista contenente valori e sottoliste, ritorna una lista contenente tutti i valori. Ad esempio: [1, [2, 3]] => [1, 2, 3] e [1, [2, [3, 4]]] => [1, 2, 3, 4]
+```python
+def flatten_list(elements: list) -> list:
+    elements = ''.join(map(str, elements))
+    result = []
+    for element in elements:
+        if element.isnumeric():
+            result.append(int(element))
+    return result
+print(flatten_list([1, [2, [3, 4]]]))
+```
+
+- 6)Implementare una funzionalità equivalente a `dict.update()`, che data una lista di dizionari, ritorna un dizionario con tutte le chiavi presenti nei dizionari di input. Per valori, si usano i valori nei dizionari di input scegliendo quelli dei dizionari con indice superiore se presenti.
+```python
+def update_dict(dictionaries) -> dict:
+    result = {}
+    for x in dictionaries:
+        for i, j in x.items():
+            result[i] = j
+    return result
+print(update_dict([{"Ciao": 1, "Pippo": 2}, {"Pluto": 3, "Pippo": 4}]))
+```
+
+- 7)
