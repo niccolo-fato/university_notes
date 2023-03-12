@@ -1,5 +1,5 @@
 <p align="center">
-  <h2 align="center">Esercizio Capitolo 3 </h2>
+  <h2 align="center">Esercizio Capitolo 2 </h2>
   <p align="center">I miei esercizi di Java!</p>
 </p>
 
