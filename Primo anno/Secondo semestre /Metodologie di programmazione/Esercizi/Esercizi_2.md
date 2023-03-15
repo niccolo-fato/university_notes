@@ -21,10 +21,6 @@
 - [Esercizio 14](#Esercizio_14)
 - [Esercizio 15](#Esercizio_15)
 - [Esercizio 16](#Esercizio_16)
-- [Esercizio 17](#Esercizio_17)
-- [Esercizio 18](#Esercizio_18)
-- [Esercizio 19](#Esercizio_19)
-- [Esercizio 20](#Esercizio_20)
 
 ## Esercizio 1
 Sostituire, all’interno della stringa Mississippi, le occorrenze di i con ii e le occorrenze di ss con

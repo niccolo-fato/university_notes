@@ -366,7 +366,7 @@ metodo addInterest non necessiterà più nessun parametro di input,
 lasciando invariata la semantica.
 ```java
 package Main;
-import java.util.Scanner;
+
 
 class BankAccount {
     private double balance;
