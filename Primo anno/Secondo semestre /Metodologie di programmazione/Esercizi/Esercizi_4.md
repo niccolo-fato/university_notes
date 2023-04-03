@@ -321,8 +321,206 @@ public class Main {
     public static void main(String[] args)  {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter a number with a comma: ");
-        String NumberWithComma = scan.nextLine();
-        System.out.println(NumberWithComma.substring(0, NumberWithComma.indexOf(","))+ NumberWithComma.substring(NumberWithComma.indexOf(",")+1));
+        String numberWithComma = scan.nextLine();
+        System.out.println(numberWithComma.substring(0, numberWithComma.indexOf(","))+ numberWithComma.substring(numberWithComma.indexOf(",")+1));
     }
 }
 ```
+
+## Esercizio 13
+Invertire l’esercizio precedente: dato un numero senza virgola fornito in input dall’utente, stampare la versione in cui è stata aggiunta.
+Esempio: inserendo la stringa 656759, il programma stamperà in output 656,759.
+```java
+package Main;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args)  {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter a number with a comma: ");
+        String numberWithComma = scan.nextLine();
+        System.out.println(numberWithComma.substring(0, numberWithComma.length()-3)+ "," + numberWithComma.substring(numberWithComma.length()-3));
+    }
+}
+```
+
+## Esercizio 14
+Stampare a video una griglia come la seguente:
+                    +--+--+--+ 
+                    |  |  |  | 
+                    +--+--+--+ 
+                    |  |  |  |
+                    +--+--+--+ 
+                    |  |  |  |
+                    +--+--+--+
+Per ottenere questo risultato, sarà richiesta la creazione di una variabile che rappresenti ciascuna riga della griglia, valorizzata con “+--+--+--+\n| | | |”, e di una seconda variabile che rappresenti la riga finale, valorizzata con “+--+--+--+”. L’esercizio sarà ritenuto corretto se la stampa di tre righe consecutive seguita da quella della riga finale darà lo stesso risultato dell’esempio.
+```java
+package Main;
+
+public class Main {
+
+    public static void main(String[] args)  {
+        String firstLine = "+--+--+--+\n|  |  |  |\n";
+        String lastLine = "+--+--+--+";
+        System.out.println(firstLine+firstLine+firstLine+lastLine);
+    }
+}
+```
+
+## Esercizio 15
+Dato un intero a 5 cifre fornito in input dall’utente, creare una stringa che contenga ogni sua cifra separata da uno spazio.
+Esempio: inserendo in input il numero 13567 verrà stampato “1 3 5 6 7”.
+```java
+package Main;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args)  {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter a 5-digit value:");
+        String value = scan.nextLine();
+        String result = "";
+        for (int i = 0; i < value.length(); i++){
+            result += value.charAt(i) + " ";
+        }
+        System.out.println(result);
+    }
+}
+```
+
+## Esercizio 16
+Dati due interi forniti da input che rappresentano due orari nel formato hhmm, dove
+hh indica l’ora e mm i minuti, stampare la loro differenza in ore e minuti.
+Consiglio: insieme all’esercizio viene fornita la classe TimeInterval che servirà a calcolare la differenza tra i due orari.
+NB: il primo orario precede temporalmente il secondo. Pertanto, la differenza tra il valore 0900 e 1730 sarà di 8 ore e 30 minuti, mentre la differenza tra 1730 e 0900 sarà di 15 ore e 30 minuti.
+```java
+package Main;
+import java.util.Scanner;
+
+class TimeInterval {
+    private int hours;
+
+    public TimeInterval(int hours) {
+        this.hours = hours;
+    }
+
+    public int getHours() {
+        return hours;
+    }
+    public String Difference(int hours2){
+        String minutes = Integer.toString(hours).substring(Integer.toString(hours).length() - 2);
+        String hour = Integer.toString(hours).substring(0,Integer.toString(hours).length()-2);
+        int startTime = Integer.parseInt(hour)*60+Integer.parseInt(minutes);
+        String minutes2 = Integer.toString(hours2).substring(Integer.toString(hours2).length() - 2);
+        String hour2 = Integer.toString(hours2).substring(0,Integer.toString(hours2).length()-2);
+        int endTime = Integer.parseInt(hour2)*60+Integer.parseInt(minutes2);
+        int diffMinutes = endTime - startTime;
+        int diffHours = diffMinutes / 60;
+        int remainingMinutes = diffMinutes % 60;
+        return String.format("%d:%02d", diffHours, remainingMinutes);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        TimeInterval HOURS1 = new TimeInterval(1530);
+        TimeInterval HOURS2 = new TimeInterval(1600);
+        System.out.println(HOURS1.Difference(HOURS2.getHours()));
+    }
+}
+```
+
+## Esercizio 18
+Creare una classe Balloon che rappresenti le proprietà di un palloncino. 
+Attributi:
+- volume:di tipo double,rappresenta il volume del palloncino 
+- Costruttore:dovrà valorizzare l’attributo volume a 0
+Metodi:
+- addAir:aggiunge dell’aria al palloncino per un valore pari a quello passato alla funzione tramite il suo parametro
+- getVolume:ritorna il volume del palloncino
+- getRadius:ritorna il raggio del palloncino(sfera)
+- getSurfaceArea:ritorna l’area della superficie del palloncino
+Consiglio: la classe Math fornisce un metodo chiamato cbrt() per il calcolo della radice cubica e pow() per l’elevamento a potenza.
+```java
+package Main;
+import java.util.Scanner;
+
+class Balloon {
+    private double volume;
+
+    public Balloon(){
+        volume = 0;
+    }
+    public void AddAir(int air){
+        this.volume += air;
+    }
+    public double GetRadius(){
+        return Math.cbrt(3 * volume/(4 * Math.PI));
+    }
+    public double GetVolume(){
+        return volume;
+    }
+    public double GetSurfaceArea(){
+        double radius = GetRadius();
+        return 4*Math.PI*Math.pow(radius,2);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        Balloon OBJECT = new Balloon();
+        OBJECT.AddAir(100);
+        System.out.println("Volume: " + OBJECT.GetVolume());
+        System.out.printf("Radius: %.2f\n", OBJECT.GetRadius());
+        System.out.printf("Surface area: %.2f", OBJECT.GetSurfaceArea());
+    }
+}
+```
+
+## Esercizio 20
+Creare una classe chiamata IceCreamCone che simula la creazione di un cono
+Attributi:
+- height:di tipo double,indical’altezza del cono
+- radius:di tipo double,indica il raggio della parte circolare del cono
+Costruttore: dovrà essere ridefinito per accettare due parametri che andranno a valorizzare height e radius
+Metodi:
+- getSurfaceArea():ritorna la superficie laterale del cono
+- getVolume():ritorna il volume del cono
+Per testare il corretto funzionamento, creare una classe chiamata IceCreamTester il quale dovrà creare un cono gelato di altezza 6 e raggio 1. La superficie risultante dovrà essere pari a 19.109562, mentre il volume dovrà essere pari a 6.283185.
+```java
+package Main;
+import java.util.Scanner;
+
+class IceCreamCone {
+    private double height;
+    private double radius;
+    public IceCreamCone(double height,double radius){
+        this.height = height;
+        this.radius = radius;
+    }
+    public double GetSurfaceArea(){
+        double apotema;
+        apotema = Math.sqrt(Math.pow(height,2)+Math.pow(radius,2));
+        return Math.PI*radius*apotema;
+    }
+    public double GetVolume(){
+        return ((Math.PI*Math.pow(radius,2))*height)/3;
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        IceCreamCone OBJECT = new IceCreamCone(6,1);
+        System.out.println(OBJECT.GetSurfaceArea());
+        System.out.println(OBJECT.GetVolume());
+    }
+}
+```
+
+
